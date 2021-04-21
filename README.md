@@ -77,27 +77,41 @@ $response->ok() : bool;
 
 > Will throw an exception on >500 errors.
 
-## Available Methods:
+## Supported Methods:
+
+> Missing API Endpoint? Pull Requests are welcome.
 
 <a id="admin-token"></a>
-### Admin Token Integration (IntegrationAdminTokenServiceV1)
+| Name                   	| Method    | API Endpoint                            | Description                           |
+|------------------------	|--------	  |---------------------------------------	|-------------------------------------	|
+| Admin Token Generation  |  POST   	| /V1/integration/admin/token           	| Generate admin token.               	|
 
-`/V1/integration/admin/token`
-
-Generate a admin token:
 ```php
-Magento::api('integration')->adminToken($username, $password);
+$magento->api('integration')->adminToken($username, $password);
 ```
 
 <a id="bundle-products"></a>
-### Bundle Product Options (bundleProductOptionRepositoryV1)
+| Name                   	| Method    | API Endpoint                            | Description                           |
+|------------------------	|--------	  |---------------------------------------	|-------------------------------------	|
+| Bundle Product Options  | GET      	| /V1/bundle-products/{sku}/options/all   | Get all options for bundle product. 	|
 
-`/V1/bundle-products/{sku}/options/all`
-
-Get all options for bundle product.
 ```php
-Magento::api('bundleProduct')->options($sku);
+$magento->api('bundleProduct')->options($sku);
 ```
+
+|                         |  	      |                                       	|                                     	|
+|------------------------	|--------	|---------------------------------------	|-------------------------------------	|
+| Bundle Product Options  | GET   	| /V1/bundle-products/{sku}/options/all 	| Get all options for bundle product.  	|
+
+<details>
+  <summary>Example</summary>
+
+  ```php
+    $magento->api('bundleProduct')->options($sku);
+  ```
+
+</details>
+
 
 #### Carts
 
