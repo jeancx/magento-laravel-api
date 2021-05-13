@@ -41,23 +41,7 @@ A Magento 2 API Object Oriented wrapper for a Laravel application.
 Install this package via Composer:
 
 ```bash
-composer require grayloon/laravel-magento-api
-```
-
-Publish the config options:
-```bash
-php artisan vendor:publish --provider="Grayloon\Magento\MagentoServiceProvider"
-```
-
-Configure your Magento 2 API endpoint and token in your `.env` file:
-```
-MAGENTO_BASE_URL="https://mydomain.com"
-MAGENTO_ACCESS_TOKEN="client_access_token_here"
-
-# Optional Config:
-MAGENTO_BASE_PATH="rest"
-MAGENTO_STORE_CODE="all"
-MAGENTO_API_VERSION="V1"
+composer require jeancx/laravel-magento-api
 ```
 
 ## API Usage
@@ -66,7 +50,8 @@ Example:
 ```php
 use Grayloon\Magento\Magento;
 
-$magento = new Magento();
+//parameters: string $baseUrl, string $token, string $version = 'V1', string $basePath = 'rest', string $storeCode = 'all'
+$magento = new Magento('https://my-shop.local', 'token', 'V1', 'rest', 'all');
 $response = $magento->api('products')->all();
 
 $response->body() : string;

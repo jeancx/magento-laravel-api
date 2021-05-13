@@ -56,13 +56,13 @@ class Magento
      * @param string $baseUrl
      * @param string $token
      */
-    public function __construct($baseUrl = null, $token = null)
+    public function __construct(string $baseUrl, string $token, string $version = 'V1', string $basePath = 'rest', string $storeCode = 'all')
     {
-        $this->baseUrl = $baseUrl ?: config('magento.base_url');
-        $this->token = $token ?: config('magento.token');
-        $this->version = config('magento.version') ?? 'V1';
-        $this->basePath = config('magento.base_path') ?? 'rest';
-        $this->storeCode = config('magento.store_code') ?? 'all';
+        $this->baseUrl = $baseUrl;
+        $this->token = $token;
+        $this->version = $version;
+        $this->basePath = $basePath;
+        $this->storeCode = $storeCode;
     }
 
     /**
