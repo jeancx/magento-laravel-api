@@ -38,7 +38,24 @@ A Magento 2 API Object Oriented wrapper for a Laravel application.
 
 ## Installation
 
+Change your project composer.json to use this fork:
+```json
+{
+    ...,
+    "repositories": [
+        ...,
+        {
+            "type": "git",
+            "url": "https://github.com/jeancx/magento-laravel-api"
+        }
+    ],
+    ...
+}
+```
+
 Install this package via Composer:
+
+
 
 ```bash
 composer require jeancx/laravel-magento-api
